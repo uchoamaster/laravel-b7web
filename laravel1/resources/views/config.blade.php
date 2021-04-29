@@ -92,6 +92,8 @@ input:checked + .slider:before {
 <div class="container">
 	<div class="row">
 	    <div class="col-md-6">
+            <a href="/config/info">Configurações INFO</a>
+            <a href="/config/permissoes">Configurações PERMISSÕES</a>
 	    <div class="card" style="margin:50px 0">
                 <!-- Default panel contents -->
                 <div class="card-header">Checkbox to Switch</div>

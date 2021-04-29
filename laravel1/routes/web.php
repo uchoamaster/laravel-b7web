@@ -19,16 +19,19 @@ Route::view('/login','login');
 Route::view('/register','register');
 
 Route::get('/config', function(){
+    $link = route('info');
+
+    echo "LINK: ".$link;
     return view('config');
 });
 
 Route::get('/config/info', function(){
 echo "Configurações INFO";
-});
+})->name('info');
 
 Route::get('/config/permissoes', function(){
 echo "Configurações PERMISSÕES";
-});
+})->name('permissoes');
 
 Route::get('/noticia/{slug}', function($slug){
     echo "Slug: ".$slug;
