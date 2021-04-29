@@ -13,12 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::view('/','welcome');
 Route::view('/teste','teste');
 Route::view('/login','login');
+Route::view('/register','register');
+
+Route::get('/config', function(){
+    return view('config');
+});
+
+Route::get('/config/info', function(){
+echo "Configurações INFO";
+});
+
+Route::get('/config/permissoes', function(){
+echo "Configurações PERMISSÕES";
+});
 
 Route::get('/noticia/{slug}', function($slug){
     echo "Slug: ".$slug;
