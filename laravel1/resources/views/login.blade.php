@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <!-- This file has been downloaded from Bootsnipp.com. Enjoy! -->
-    <title>Login Form - Bootsnipp.com</title>
+    <title>Login</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
     <style type="text/css">
@@ -94,7 +94,7 @@ body{
                     <a class="nav-link" href="login">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="register">Register</a>
+                    <a class="nav-link" href="register">Registro</a>
                 </li>
             </ul>
 
@@ -103,7 +103,7 @@ body{
 </nav>
 
 <main class="login-form">
-    <div class="cotainer">
+    <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
@@ -111,14 +111,14 @@ body{
                     <div class="card-body">
                         <form action="" method="">
                             <div class="form-group row">
-                                <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
+                                <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail</label>
                                 <div class="col-md-6">
                                     <input type="text" id="email_address" class="form-control" name="email-address" required autofocus>
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+                                <label for="password" class="col-md-4 col-form-label text-md-right">Senha</label>
                                 <div class="col-md-6">
                                     <input type="password" id="password" class="form-control" name="password" required>
                                 </div>
@@ -128,7 +128,7 @@ body{
                                 <div class="col-md-6 offset-md-4">
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox" name="remember"> Remember Me
+                                            <input type="checkbox" name="remember"> Lembrar-me
                                         </label>
                                     </div>
                                 </div>
@@ -136,10 +136,10 @@ body{
 
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Register
+                                    Entrar
                                 </button>
                                 <a href="register" class="btn btn-link">
-                                    Forgot Your Password?
+                                    Ainda não tem registro? clique aqui!
                                 </a>
                             </div>
                     </div>

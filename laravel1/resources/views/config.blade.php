@@ -84,16 +84,47 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+
+.navbar-laravel
+{
+    box-shadow: 0 2px 4px rgba(0,0,0,.04);
+}
+
+.navbar-brand , .nav-link, .my-form, .login-form
+{
+    font-family: Raleway, sans-serif;
+}
     </style>
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-light navbar-laravel">
+    <div class="container">
+        <a class="navbar-brand" href="/">Laravel</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/config/info">Informações</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/config/permissoes">Permissões</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
 <div class="container">
 	<div class="row">
 	    <div class="col-md-6">
-            <a href="/config/info">Configurações INFO</a>
-            <a href="/config/permissoes">Configurações PERMISSÕES</a>
+
 	    <div class="card" style="margin:50px 0">
                 <!-- Default panel contents -->
                 <div class="card-header">Checkbox to Switch</div>

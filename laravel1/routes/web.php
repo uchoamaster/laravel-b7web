@@ -19,9 +19,9 @@ Route::view('/login','login');
 Route::view('/register','register');
 
 Route::get('/config', function(){
-    $link = route('info');
+    // $link = route('info');
 
-    echo "LINK: ".$link;
+    // echo "LINK: ".$link;
     return view('config');
 });
 

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <!-- This file has been downloaded from Bootsnipp.com. Enjoy! -->
-    <title>Registration Form with Javascipt Validation - Bootsnipp.com</title>
+    <title>Registro </title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
     <style type="text/css">
@@ -94,7 +94,7 @@ body{
                 <a class="nav-link" href="login">Login</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="register">Register</a>
+                <a class="nav-link" href="register">Registro</a>
             </li>
         </ul>
 
@@ -103,66 +103,59 @@ body{
 </nav>
 
 <main class="my-form">
-    <div class="cotainer">
+    <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
                     <div class="card">
-                        <div class="card-header">Register</div>
+                        <div class="card-header">Registro</div>
                         <div class="card-body">
                             <form name="my-form" onsubmit="return validform()" action="success.php" method="">
                                 <div class="form-group row">
-                                    <label for="full_name" class="col-md-4 col-form-label text-md-right">Full Name</label>
+                                    <label for="full_name" class="col-md-4 col-form-label text-md-right">Nome Completo</label>
                                     <div class="col-md-6">
                                         <input type="text" id="full_name" class="form-control" name="full-name">
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
+                                    <label for="email_address" class="col-md-4 col-form-label text-md-right">Endereço de E-mail</label>
                                     <div class="col-md-6">
                                         <input type="text" id="email_address" class="form-control" name="email-address">
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="user_name" class="col-md-4 col-form-label text-md-right">User Name</label>
+                                    <label for="user_name" class="col-md-4 col-form-label text-md-right">Nome de Usuário</label>
                                     <div class="col-md-6">
                                         <input type="text" id="user_name" class="form-control" name="username">
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="phone_number" class="col-md-4 col-form-label text-md-right">Phone Number</label>
+                                    <label for="phone_number" class="col-md-4 col-form-label text-md-right">Telefone</label>
                                     <div class="col-md-6">
                                         <input type="text" id="phone_number" class="form-control">
                                     </div>
                                 </div>
 
-                                <div class="form-group row">
-                                    <label for="present_address" class="col-md-4 col-form-label text-md-right">Present Address</label>
-                                    <div class="col-md-6">
-                                        <input type="text" id="present_address" class="form-control">
-                                    </div>
-                                </div>
 
                                 <div class="form-group row">
-                                    <label for="permanent_address" class="col-md-4 col-form-label text-md-right">Permanent Address</label>
+                                    <label for="permanent_address" class="col-md-4 col-form-label text-md-right">Endereço Atual</label>
                                     <div class="col-md-6">
                                         <input type="text" id="permanent_address" class="form-control" name="permanent-address">
                                     </div>
                                 </div>
-
                                 <div class="form-group row">
-                                    <label for="nid_number" class="col-md-4 col-form-label text-md-right"><abbr
-                                                title="National Id Card">NID</abbr> Number</label>
+                                    <label for="permanent_address" class="col-md-4 col-form-label text-md-right">Senha</label>
                                     <div class="col-md-6">
-                                        <input type="text" id="nid_number" class="form-control" name="nid-number">
+                                        <input type="password" id="permanent_address" class="form-control" name="permanent-address">
                                     </div>
                                 </div>
 
+
                                     <div class="col-md-6 offset-md-4">
                                         <button type="submit" class="btn btn-primary">
-                                        Register
+                                        Registrar
                                         </button>
                                     </div>
                                 </div>
