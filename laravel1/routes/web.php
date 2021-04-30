@@ -18,20 +18,24 @@ Route::view('/teste','teste');
 Route::view('/login','login');
 Route::view('/register','register');
 
-Route::get('/config', function(){
-    // $link = route('info');
 
-    // echo "LINK: ".$link;
-    return view('config');
+Route::prefix('/config')->group(function(){
+
+    Route::get('/', function(){
+        return view('config');
+    });
+
+    Route::get('info', function(){
+    echo "Configurações INFO";
+    });
+
+    Route::get('permissoes', function(){
+    echo "Configurações PERMISSÕES";
+    });
+
 });
 
-Route::get('/config/info', function(){
-echo "Configurações INFO";
-})->name('info');
 
-Route::get('/config/permissoes', function(){
-echo "Configurações PERMISSÕES";
-})->name('permissoes');
 
 Route::get('/noticia/{slug}', function($slug){
     echo "Slug: ".$slug;
