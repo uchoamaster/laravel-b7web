@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ConfigController;
+use App\Http\Controllers\Admin\ConfigController;
 use App\Http\Controllers\HomeController;
 
 /*
@@ -17,7 +17,7 @@ use App\Http\Controllers\HomeController;
 
 Route::prefix('/')->group(function(){
 
-    Route::get('/', [HomeController::class, 'login']);
+    Route::get('/', HomeController::class);
 
     Route::get('/register', [HomeController::class,'register']);
 
