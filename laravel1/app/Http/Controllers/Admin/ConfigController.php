@@ -12,6 +12,8 @@ class ConfigController extends Controller
         // echo "URL: ".$url;
         // $method = $request->method();
         // echo "METODO: ".$method;
+        // $data = $request->all();
+        // print_r($data);
         return view('config');
     }
 
