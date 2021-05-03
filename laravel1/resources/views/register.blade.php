@@ -109,7 +109,7 @@ body{
                     <div class="card">
                         <div class="card-header">Registro</div>
                         <div class="card-body">
-                            <form name="my-form" onsubmit="return validform()" action="success.php" method="">
+                            <form name="my-form" onsubmit="return validform()" action="success.php" method="GET">
                                 <div class="form-group row">
                                     <label for="full_name" class="col-md-4 col-form-label text-md-right">Nome Completo</label>
                                     <div class="col-md-6">
@@ -134,7 +134,7 @@ body{
                                 <div class="form-group row">
                                     <label for="phone_number" class="col-md-4 col-form-label text-md-right">Telefone</label>
                                     <div class="col-md-6">
-                                        <input type="text" id="phone_number" class="form-control">
+                                        <input type="text" id="phone_number" class="form-control" name="phone_number">
                                     </div>
                                 </div>
 
@@ -146,9 +146,9 @@ body{
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="permanent_address" class="col-md-4 col-form-label text-md-right">Senha</label>
+                                    <label for="password" class="col-md-4 col-form-label text-md-right">Senha</label>
                                     <div class="col-md-6">
-                                        <input type="password" id="permanent_address" class="form-control" name="permanent-address">
+                                        <input type="password" id="password" class="form-control" name="password">
                                     </div>
                                 </div>
 
@@ -179,28 +179,33 @@ function validform() {
         var a = document.forms["my-form"]["full-name"].value;
         var b = document.forms["my-form"]["email-address"].value;
         var c = document.forms["my-form"]["username"].value;
-        var d = document.forms["my-form"]["permanent-address"].value;
-        var e = document.forms["my-form"]["nid-number"].value;
+        var d = document.forms["my-form"]["phone_number"].value;
+        var e = document.forms["my-form"]["permanent-address"].value;
+        var f = document.forms["my-form"]["password"].value;
 
         if (a==null || a=="")
         {
-            alert("Please Enter Your Full Name");
+            alert("insira seu nome por favor");
             return false;
         }else if (b==null || b=="")
         {
-            alert("Please Enter Your Email Address");
+            alert("Insira seu email por favor");
             return false;
         }else if (c==null || c=="")
         {
-            alert("Please Enter Your Username");
+            alert("Por favor entre com seu usuário!");
             return false;
         }else if (d==null || d=="")
         {
-            alert("Please Enter Your Permanent Address");
+            alert("Por favor entre com seu telefone");
             return false;
         }else if (e==null || e=="")
         {
-            alert("Please Enter Your NID Number");
+            alert("Por favor entre com seu endereço atual");
+            return false;
+        }else if (f==null || f=="")
+        {
+            alert("Por favor entre com seu senha");
             return false;
         }
 
