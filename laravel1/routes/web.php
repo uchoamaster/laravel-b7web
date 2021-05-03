@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ConfigController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,42 +15,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/','welcome');
-Route::view('/teste','teste');
-Route::view('/login','login');
-Route::view('/register','register');
+Route::prefix('/')->group(function(){
 
+    Route::get('/', [HomeController::class, 'login']);
+
+    Route::get('/register', [HomeController::class,'register']);
+
+});
 
 Route::prefix('/config')->group(function(){
 
-    Route::get('/', function(){
-        return view('config');
-    });
-
-    Route::get('info', function(){
-    echo "Configurações INFO";
-    });
-
-    Route::get('permissoes', function(){
-    echo "Configurações PERMISSÕES";
-    });
-
+    Route::get('/', [ConfigController::class,'config']);
+    Route::get('/info', [ConfigController::class,'info']);
+    Route::get('/permissoes', [ConfigController::class,'permissoes']);
 });
 
-
-
-Route::get('/noticia/{slug}', function($slug){
-    echo "Slug: ".$slug;
-});
-Route::get('/noticia/{slug}/comentario/{id}', function($slug, $id){
-    echo "Mostrando o comentário".$id." da notícia ".$slug;
-});
-
-Route::get('/user/{name}', function($name){
-    echo "Mostrando usuário de NOME: ".$name;
-})->where('name', '[a-z]+');
-
-
-Route::get('/user/{id}', function($id){
-    echo "Mostrando usuário de ID: ".$id;
+//alternativa de rota
+Route::fallback(function(){
+    return view('404');
 });

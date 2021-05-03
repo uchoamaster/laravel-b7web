@@ -82,8 +82,8 @@ body{
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light navbar-laravel">
-    <div class="container">
-        <a class="navbar-brand" href="#">Laravel</a>
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">Sistema</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -91,10 +91,13 @@ body{
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="login">Login</a>
+                    <a class="nav-link" href="/">Login</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="register">Registro</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="config">Configurações</a>
                 </li>
             </ul>
 
@@ -103,7 +106,7 @@ body{
 </nav>
 
 <main class="login-form">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">

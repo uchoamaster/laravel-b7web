@@ -101,8 +101,8 @@ input:checked + .slider:before {
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light navbar-laravel">
-    <div class="container">
-        <a class="navbar-brand" href="/">Laravel</a>
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">Sistema</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -121,7 +121,7 @@ input:checked + .slider:before {
         </div>
     </div>
 </nav>
-<div class="container">
+<div class="container-fluid">
 	<div class="row">
 	    <div class="col-md-6">
 
