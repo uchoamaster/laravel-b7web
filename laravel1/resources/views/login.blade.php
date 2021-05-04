@@ -1,4 +1,4 @@
-@extends('layouts.login')
+@extends('layouts.logintheme')
 @section('title', 'Login no Sistema')
 @section('content')
 
@@ -16,9 +16,12 @@
                                     <input type="password" id="password" class="form-control" name="password" required>
                                 </div>
                             </div>
-
-                            <button type="submit" class="btn btn-primary btn btn-block m-2">Entrar</button>
-                            <a href="register"><button type="button"  class="btn btn-secondary btn btn-block m-2">Registrar</button></a>
+                            <div class="col-md-8 offset-md-4">
+                            <button type="submit" class="btn btn-primary btn btn-block m-1">Entrar</button>
+                            </div>
+                            <div class="col-md-8 offset-md-4">
+                            <a href="register"><button type="button"  class="btn btn-secondary btn btn-block m-1">Registrar</button></a>
+                            </div>
                     </div>
                     </form>
                 </div>
