@@ -3,7 +3,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="utf-8">
-    <title>Login</title>
+    <title>@yield('title') Login</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
    <!-- Bootstrap CSS -->
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
@@ -64,7 +64,7 @@ body{
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        {{-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="/">Login</a>
@@ -77,7 +77,7 @@ body{
                 </li>
             </ul>
 
-        </div>
+        </div> --}}
     </div>
 </nav>
 
@@ -88,25 +88,7 @@ body{
                 <div class="card">
                     <div class="card-header">Login</div>
                     <div class="card-body">
-                        <form action="" method="">
-                            <div class="form-group row">
-                                <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail</label>
-                                <div class="col-md-8">
-                                    <input type="text" id="email_address" class="form-control" name="email-address" required autofocus>
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label for="password" class="col-md-4 col-form-label text-md-right">Senha</label>
-                                <div class="col-md-8">
-                                    <input type="password" id="password" class="form-control" name="password" required>
-                                </div>
-                            </div>
-
-                            <button type="submit" class="btn btn-primary btn btn-block m-2">Entrar</button>
-                            <a href="register"><button type="button"  class="btn btn-secondary btn btn-block m-2">Registrar</button></a>
-                    </div>
-                    </form>
+                        @yield('content')
                 </div>
             </div>
         </div>
@@ -119,7 +101,7 @@ body{
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 </body>
 <footer >
-
+@yield('footer')
 </footer>
 
 </html>
