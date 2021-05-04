@@ -111,7 +111,9 @@ body{
                         <div class="card-body">
                             <form name="my-form" onsubmit="return validform()"  method="GET">
 
-                            Meu nome é {{ $nome }}, e minha idade é {{ $idade }} anos.
+                            Meu nome é {{ $nome }}, e minha idade é {{ $idade }} anos.<br>
+                            Versão: {{$versao}}
+
                                 <div class="form-group row">
                                     <label for="full_name" class="col-md-4 col-form-label text-md-right">Nome Completo</label>
                                     <div class="col-md-6">
