@@ -37,6 +37,18 @@
         @endif --}}
 
         {{-- este outro exemplo é bastante utilizado tb como podem verificar --}}
+        {{-- pode se criar um componente de alerta dessa forma aqui como podes verificar no exemplo abaixo: --}}
+
+        @component('components.alert')
+            Testando msg de alerta de erro 1,2,3 ...
+        @endcomponent
+
+        {{-- @component('alert')
+        @slot('type')
+        Aviso:
+        @endslot
+        Alerta de Erro Teste
+        @endcomponent --}}
         <ul>
             @forelse($lista as $item)
             <li>{{$item['nome']}} -  {{$item['qt']}}</li>
