@@ -2,7 +2,7 @@
 @section('title', 'Registro no Sistema')
 @section('content-registro')
 
-        Meu nome é {{$nome}} e tenho {{$idade}} anos.<br>
+        {{-- Meu nome é {{$nome}} e tenho {{$idade}} anos.<br> --}}
 
         {{-- @if($idade > 18  && $idade <= 60)
         eu sou um Adulto.
@@ -19,7 +19,36 @@
         @empty($idade)
         existe uma cidade {{$idade}}
         @endempty --}}
-                            <form name="my-form" onsubmit="return validform()"  method="GET">
+            <hr>
+        {{-- @for($q=1;$q<=10;$q++)
+            o valor é {{$q}}<br>
+        @endfor --}}
+
+        {{-- pode se fazer assim ou de outro jeito que vou mostrar na sequencia --}}
+        {{-- @if(count($lista) > 0)
+            Lista de Bolo:
+            <ul>
+                @foreach($lista as $item)
+                <li>{{$item}}</li>
+                @endforeach
+            </ul>
+        @else
+        Não há ingredientes.
+        @endif --}}
+
+        {{-- este outro exemplo é bastante utilizado tb como podem verificar --}}
+        <ul>
+            @forelse($lista as $item)
+            <li>{{$item['nome']}} -  {{$item['qt']}}</li>
+            @empty
+            <li>Não há ingredientes</li>
+            @endforelse
+        </ul>
+
+        {{-- @while()
+        pouco utilizado mas tb pode ser util em determinada situação
+        @endwhile --}}
+            <hr>                <form name="my-form" onsubmit="return validform()"  method="GET">
 
 
 
