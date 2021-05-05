@@ -2,6 +2,23 @@
 @section('title', 'Registro no Sistema')
 @section('content-registro')
 
+        Meu nome é {{$nome}} e tenho {{$idade}} anos.<br>
+
+        {{-- @if($idade > 18  && $idade <= 60)
+        eu sou um Adulto.
+        @elseif($idade > 60 && $idade <=120)
+        eu sou um idoso.
+        @else
+        eu  sou MENOR de idade.
+        @endif
+        <br>
+        @isset($versao)
+        existe uma versão e é a versão: {{$versao}}
+        @endisset
+        <br>
+        @empty($idade)
+        existe uma cidade {{$idade}}
+        @endempty --}}
                             <form name="my-form" onsubmit="return validform()"  method="GET">
 
 
