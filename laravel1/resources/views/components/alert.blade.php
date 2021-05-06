@@ -9,9 +9,10 @@
 .alert{
     border: 1px solid #ff0000;
     padding: 10px;
-    background-color: white;
-    color: #ff0000;
+    background-color: #ff0000;
+    color: #fff;
     border-radius: 5px;
+    text-align: center;
 }
 .alert:hover{
     color:white;

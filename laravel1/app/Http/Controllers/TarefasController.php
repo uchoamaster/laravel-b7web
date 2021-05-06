@@ -32,7 +32,8 @@ class TarefasController extends Controller
             ]);
             return redirect()->route('tarefas.list');
         }else {
-
+            return redirect()->route('tarefas.add')
+            ->with('warning', 'Você não preencheu o título!');
         }
     }
     public function edit() {

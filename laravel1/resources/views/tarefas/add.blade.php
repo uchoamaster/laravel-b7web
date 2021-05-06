@@ -4,7 +4,11 @@
 
 @section('content')
 <h3 >Adicionar</h3>
-
+@if(session('warning'))
+    @component('components.alert')
+        {{ session('warning') }}
+    @endcomponent
+@endif
 <form name="my-form" onsubmit="return validform()"  method="POST">
     @csrf
 
@@ -18,7 +22,7 @@
 
         <div class="col-md-6 offset-md-4">
             <button type="submit" class="btn btn-primary btn btn-block">
-            Editar
+            Adicionar
             </button>
         </div>
     </div>
@@ -42,7 +46,7 @@ function validform() {
 var a = document.forms["my-form"]["titulo"].value;
 
 
-if (a==null || a=="")
+if (ab==null || ab=="")
 {
 alert("insira um título por favor");
 return false;
