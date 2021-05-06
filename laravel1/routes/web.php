@@ -41,13 +41,13 @@ Route::fallback(function(){
 
 Route::prefix('/tarefas')->group(function(){
 
-    Route::get('/', [TarefasController::class,'list']); // Lista de tarefas
-    Route::get('add', [TarefasController::class,'add']); // Tela de Adição
+    Route::get('/', [TarefasController::class,'list'])->name('tarefas.list'); // Lista de tarefas
+    Route::get('add', [TarefasController::class,'add'])->name('tarefas.add'); // Tela de Adição
     Route::post('add', [TarefasController::class,'addAction']); // Ação de Adição
-    Route::get('edit/{id}', [TarefasController::class,'edit']); // Tela de Edição
+    Route::get('edit/{id}', [TarefasController::class,'edit'])->name('tarefas.edit'); // Tela de Edição
     Route::post('edit/{id}',[TarefasController::class,'editAction']); // Ação de Edição
-    Route::get('delete/{id}', [TarefasController::class,'delete']); // Ação de exclusao
-    Route::get('marcar/{id}', [TarefasController::class,'done']); // Marcar resolvido/não.
+    Route::get('delete/{id}', [TarefasController::class,'delete'])->name('tarefas.del'); // Ação de exclusao
+    Route::get('marcar/{id}', [TarefasController::class,'done'])->name('tarefas.done'); // Marcar resolvido/não.
 });
 
 

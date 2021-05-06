@@ -23,14 +23,23 @@ class TarefasController extends Controller
         return view('tarefas.add');
     }
 
-    public function addAction() {
+    public function addAction(Request $request) {
+        if($request->filled('titulo')){
+            $titulo = $request->input('titulo');
 
+            DB::insert('INSERT INTO tarefas (titulo) VALUES (:titulo)',[
+                'titulo' => $titulo
+            ]);
+            return redirect()->route('tarefas.list');
+        }else {
+
+        }
     }
     public function edit() {
         return view('tarefas.edit');
     }
 
-    public function editAction() {
+    public function editAction(Request $request) {
 
     }
 

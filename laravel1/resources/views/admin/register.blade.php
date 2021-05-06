@@ -19,7 +19,7 @@
         @empty($idade)
         existe uma cidade {{$idade}}
         @endempty --}}
-            <hr>
+            {{-- <hr> --}}
         {{-- @for($q=1;$q<=10;$q++)
             o valor é {{$q}}<br>
         @endfor --}}
@@ -39,9 +39,9 @@
         {{-- este outro exemplo é bastante utilizado tb como podem verificar --}}
         {{-- pode se criar um componente de alerta dessa forma aqui como podes verificar no exemplo abaixo: --}}
 
-        @component('components.alert')
+        {{-- @component('components.alert')
             Testando msg de alerta de erro 1,2,3 ...
-        @endcomponent
+        @endcomponent --}}
 
         {{-- @component('alert')
         @slot('type')
@@ -49,18 +49,19 @@
         @endslot
         Alerta de Erro Teste
         @endcomponent --}}
-        <ul>
+        {{-- <ul>
             @forelse($lista as $item)
             <li>{{$item['nome']}} -  {{$item['qt']}}</li>
             @empty
             <li>Não há ingredientes</li>
             @endforelse
-        </ul>
+        </ul> --}}
 
         {{-- @while()
         pouco utilizado mas tb pode ser util em determinada situação
         @endwhile --}}
-            <hr>                <form name="my-form" onsubmit="return validform()"  method="GET">
+            {{-- <hr>        --}}
+                     <form name="my-form" onsubmit="return validform()"  method="GET">
 
 
 
