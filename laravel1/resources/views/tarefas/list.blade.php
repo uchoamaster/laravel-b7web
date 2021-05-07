@@ -5,7 +5,7 @@
 
 @section('content')
 <h1>Listagem</h1>
-<button type="button" id="botao-cadastro" class="btn btn-primary"><a href="{{ route('tarefas.add')}}">Adicionar nova tarefa</a></button>
+<button type="button" id="botao-cadastro" class="btn btn-secondary"><a href="{{ route('tarefas.add')}}">Adicionar nova tarefa</a></button>
 
 @if(count($list) > 0 )
     <ul class="list-group">
@@ -17,7 +17,7 @@
         {{-- <input class="form-check-input me-1" type="checkbox" value="" aria-label="..."><a href="">@if($item->resolvido===1) desmarcar @else  marcar @endif</a> --}}
         {{$item->titulo}}
         <a href="{{ route('tarefas.edit',['id'=>$item->id])}}">[Editar]</a>
-        <a href="{{ route('tarefas.del',['id'=>$item->id])}}">[Excluir]</a>
+        <a href="{{ route('tarefas.del',['id'=>$item->id])}}" onclick="return confirm('Tem certeza que deseja Excluir?')">[Excluir]</a>
     </li>
     @endforeach
     </ul>

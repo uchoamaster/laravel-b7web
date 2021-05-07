@@ -4,12 +4,16 @@
 
 @section('content')
 <h3 >Adicionar</h3>
-@if(session('warning'))
-    @component('components.alert')
-        {{ session('warning') }}
-    @endcomponent
+
+@if($errors->any())
+@component('components.alert')
+        @foreach($errors->all() as $error)
+            {{ $error }} <br>
+        @endforeach
+@endcomponent
 @endif
-<form name="my-form" onsubmit="return validform()"  method="POST">
+
+<form name="my-form"   method="POST">
     @csrf
 
 
@@ -40,20 +44,6 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </body>
 </html>
-<script type="text/javascript">
-function validform() {
-
-var a = document.forms["my-form"]["titulo"].value;
-
-
-if (ab==null || ab=="")
-{
-alert("insira um título por favor");
-return false;
-}
-
-}
-</script>
 
 
 @endsection

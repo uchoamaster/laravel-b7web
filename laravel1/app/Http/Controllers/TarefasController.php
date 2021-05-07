@@ -24,32 +24,58 @@ class TarefasController extends Controller
     }
 
     public function addAction(Request $request) {
-        if($request->filled('titulo')){
+            $request->validate([
+                'titulo'=> [ 'required', 'string' ]
+            ]);
+
+
             $titulo = $request->input('titulo');
 
             DB::insert('INSERT INTO tarefas (titulo) VALUES (:titulo)',[
                 'titulo' => $titulo
             ]);
             return redirect()->route('tarefas.list');
+
+    }
+    public function edit($id) {
+        $data = DB::select('SELECT * FROM  tarefas WHERE id =:id',[
+            'id'=> $id
+        ]);
+        if (count($data) > 0) {
+            return view('tarefas.edit',[
+                'data'=> $data[0]
+            ]);
         }else {
-            return redirect()->route('tarefas.add')
-            ->with('warning', 'Você não preencheu o título!');
+            return redirect()->route('tarefas.list');
         }
     }
-    public function edit() {
-        return view('tarefas.edit');
+
+    public function editAction(Request $request, $id) {
+        $request->validate([
+            'titulo'=> [ 'required', 'string' ]
+        ]);
+
+        $titulo = $request->input('titulo');
+        DB::update('UPDATE tarefas SET titulo = :titulo WHERE id = :id', [
+                   'id'=> $id,
+                   'titulo' => $titulo
+                    ]);
+        return redirect()->route('tarefas.list');
     }
 
-    public function editAction(Request $request) {
-
+    public function del($id) {
+        DB::delete('DELETE FROM  tarefas WHERE  id = :id', [
+            'id' => $id
+        ]);
+        return redirect()->route('tarefas.list');
     }
 
-    public function delete() {
-
-    }
-
-    public function done() {
-
+    public function done($id) {
+        //opção 1 será verificar select + update
+        //opção 2 update matemático, um unico update
+        DB::update('UPDATE tarefas SET resolvido = 1 - resolvido WHERE id = :id',[
+            'id'=>$id]);
+        return redirect()->route('tarefas.list');
     }
 
 

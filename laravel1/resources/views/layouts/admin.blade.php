@@ -12,7 +12,7 @@
        <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
 
 
-       <link rel="stylesheet" href="css/app.css">
+       <link rel="stylesheet" href="{{ url('/public/resources/css/app.css')}}">
 
        <link rel="icon" href="Favicon.png">
     <style type="text/css">
@@ -63,10 +63,18 @@ body{
     margin: 10px;
 }
 #botao-cadastro  a{
-    color: white ;
     text-decoration: none;
-
+    color:#fff;
 }
+
+#botao-cadastro a:hover{
+    color:#fff;
+cursor: pointer;
+}
+.list-group-item {
+    a[marcar] {
+        text-decoration: line-through;
+    }
 
     </style>
 </head>
