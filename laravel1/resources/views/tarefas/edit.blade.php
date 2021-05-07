@@ -13,7 +13,9 @@
 @endcomponent
 @endif
 
-<form name="my-form"   method="POST">
+
+
+<form name="my-form"  method="POST">
     @csrf
 
 
@@ -23,9 +25,6 @@
             <input type="text" id="titulo" class="form-control" value="{{$data->titulo}}" name="titulo">
         </div>
     </div>
-
-
-
         <div class="col-md-6 offset-md-4">
             <button type="submit" class="btn btn-primary btn btn-block">
             Salvar
