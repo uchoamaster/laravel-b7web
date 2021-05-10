@@ -4,12 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use  App\Models\tarefa;
 
 class TarefasController extends Controller
 {
     public function list() {
             //listando todos os itens cadastrados no bd
-        $list = DB::select('SELECT * FROM tarefas');
+        // $list = DB::select('SELECT * FROM tarefas');
+        //aqui eh a mesma chamada só que usando eloquent orm
+        $list = tarefa::all();
         //lista apenas as tarefas concluidas com condicional
         // $list = DB::select('SELECT * FROM tarefas WHERE resolvido = :status', [
         //     'status'=>0]);
@@ -31,19 +34,28 @@ class TarefasController extends Controller
 
             $titulo = $request->input('titulo');
 
-            DB::insert('INSERT INTO tarefas (titulo) VALUES (:titulo)',[
-                'titulo' => $titulo
-            ]);
+            // DB::insert('INSERT INTO tarefas (titulo) VALUES (:titulo)',[
+            //     'titulo' => $titulo
+            // ]);
+            $t =  new Tarefa;
+            $t->titulo = $titulo;
+            $t->save();
+
+
+
             return redirect()->route('tarefas.list');
 
     }
     public function edit($id) {
-        $data = DB::select('SELECT * FROM  tarefas WHERE id =:id',[
-            'id'=> $id
-        ]);
-        if (count($data) > 0) {
+        // $data = DB::select('SELECT * FROM  tarefas WHERE id =:id',[
+        //     'id'=> $id
+        // ]);
+
+        $data = tarefa::find($id);
+
+        if($data) {
             return view('tarefas.edit',[
-                'data'=> $data[0]
+                'data'=> $data
             ]);
         }else {
             return redirect()->route('tarefas.list');
@@ -56,10 +68,17 @@ class TarefasController extends Controller
         ]);
 
         $titulo = $request->input('titulo');
-        DB::update('UPDATE tarefas SET titulo = :titulo WHERE id = :id', [
-                   'id'=> $id,
-                   'titulo' => $titulo
-                    ]);
+        // DB::update('UPDATE tarefas SET titulo = :titulo WHERE id = :id', [
+        //            'id'=> $id,
+        //            'titulo' => $titulo
+        //             ]);
+        //colocando orm pode-se colocar da seguinte forma
+        // $t = tarefa::find($id);
+        // $t->titulo = $titulo;
+        // $t->save();
+
+        //outra forma de fazer a chamada de update com 1 linha
+        tarefa::find($id)->update(['titulo'=>$titulo]);
         return redirect()->route('tarefas.list');
     }
 

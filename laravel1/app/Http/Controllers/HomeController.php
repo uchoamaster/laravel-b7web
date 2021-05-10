@@ -86,6 +86,6 @@ class HomeController extends Controller
         // ];
 
 
-        return view('admin.register', $data);
+        return view('admin.register');
     }
 }
