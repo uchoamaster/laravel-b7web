@@ -98,8 +98,10 @@ class TarefasController extends Controller
         //     'id'=>$id]);
 
             $t = tarefa::find($id);
-            $t->resolvido = 1 - $t->resolvido;
-            $t->save();
+            if ($t) {
+                $t->resolvido = 1 - $t->resolvido;
+                $t->save();
+            }
 
         return redirect()->route('tarefas.list');
     }

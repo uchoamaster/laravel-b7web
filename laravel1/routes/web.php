@@ -37,6 +37,21 @@ Route::fallback(function(){
 });
 
 
+//QUANDO COLOCAMOS ESSA LINHA DE CÓDIGO O ROUTE RESOURCE JA CRIA TODAS ESSAS ROTAS ABAIXO COMENTADAS!!
+Route::resource('todo', 'TodoController');
+
+/*
+
+GET - /todo  - index -  todo.index - LISTA OS ITENS
+GET - /todo/create - create -  todo.create - FORM  DE CRIAÇÃO
+POST - /todo - store - todo.store  - RECEBER  OS DADOS  E ADD ITEM
+GET - /todo/{id} -  show - todo.show -  ITEM INDIVIDUAL
+GET - /todo/{id}/edit -  edit -  todo.edit -  FORM DE EDIÇÃO
+PUT - /todo{id} - update -  todo.update  -  RECEBER OS DADOS  E UPDATE ITEM
+DELETE - /todo{id} - destroy - todo.destroy - DELETAR O ITEM
+
+*/
+
 //rotas do controller tarefas
 
 Route::prefix('/tarefas')->group(function(){
