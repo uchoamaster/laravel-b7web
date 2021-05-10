@@ -83,17 +83,24 @@ class TarefasController extends Controller
     }
 
     public function del($id) {
-        DB::delete('DELETE FROM  tarefas WHERE  id = :id', [
-            'id' => $id
-        ]);
+        // DB::delete('DELETE FROM  tarefas WHERE  id = :id', [
+        //     'id' => $id
+        // ]);
+
+        tarefa::find($id)->delete();
         return redirect()->route('tarefas.list');
     }
 
     public function done($id) {
         //opção 1 será verificar select + update
         //opção 2 update matemático, um unico update
-        DB::update('UPDATE tarefas SET resolvido = 1 - resolvido WHERE id = :id',[
-            'id'=>$id]);
+        // DB::update('UPDATE tarefas SET resolvido = 1 - resolvido WHERE id = :id',[
+        //     'id'=>$id]);
+
+            $t = tarefa::find($id);
+            $t->resolvido = 1 - $t->resolvido;
+            $t->save();
+
         return redirect()->route('tarefas.list');
     }
 
