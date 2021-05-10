@@ -16,25 +16,27 @@ use App\Http\Controllers\TarefasController;
 |
 */
 
+Route::get('/login', function(){
+    return view('login');
+})->name('login');
+
 Route::prefix('/')->group(function(){
-
     Route::get('/', HomeController::class);
-
     Route::get('/register', [HomeController::class,'register']);
 
 });
 
 Route::prefix('/config')->group(function(){
-
-    Route::get('/', [ConfigController::class,'config']);
-    Route::get('/info', [ConfigController::class,'info']);
-    Route::get('/permissoes', [ConfigController::class,'permissoes']);
+    Route::get('/', [ConfigController::class,'config'])->middleware('auth');
+    Route::get('/info', [ConfigController::class,'info'])->middleware('auth');;
+    Route::get('/permissoes', [ConfigController::class,'permissoes'])->middleware('auth');;
 });
 
 //alternativa de rota
 Route::fallback(function(){
     return view('404');
 });
+
 
 
 //QUANDO COLOCAMOS ESSA LINHA DE CÓDIGO O ROUTE RESOURCE JA CRIA TODAS ESSAS ROTAS ABAIXO COMENTADAS!!
@@ -66,3 +68,7 @@ Route::prefix('/tarefas')->group(function(){
 });
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
